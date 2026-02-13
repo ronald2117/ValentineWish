@@ -277,7 +277,7 @@ const animationTimeline = () => {
 
 // Import the data to customize and insert them into page
 const fetchData = () => {
-  fetch("customize.json")
+  return fetch("customize.json")
     .then((data) => data.json())
     .then((data) => {
       Object.keys(data).map((customData) => {
@@ -286,8 +286,18 @@ const fetchData = () => {
             document
               .getElementById(customData)
               .setAttribute("src", data[customData]);
+          } else if (customData === "idea6Text") {
+            // Special handling for idea6Text - split into two spans
+            const text = data[customData];
+            if (text.length >= 2) {
+              const p = document.getElementById(customData);
+              p.innerHTML = `<span>${text[0]}</span>\n          <span>${text[1]}</span>`;
+            }
           } else {
-            document.getElementById(customData).innerText = data[customData];
+            const element = document.getElementById(customData);
+            if (element) {
+              element.innerText = data[customData];
+            }
           }
         }
       });
@@ -297,9 +307,10 @@ const fetchData = () => {
 // Run fetch and animation in sequence
 const resolveFetch = () => {
   return new Promise((resolve, reject) => {
-    fetchData();
-    resolve("Fetch done!");
+    fetchData().then(() => {
+      resolve("Fetch done!");
+    });
   });
 };
 
-resolveFetch().then(animationTimeline());
+resolveFetch().then(animationTimeline);

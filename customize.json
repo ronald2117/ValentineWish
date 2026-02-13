@@ -1,6 +1,18 @@
 {
-  "name": "Ela",
+  "name": "Elalab",
   "greetingText": "Mahal na mahal kita",
-  "wishText": "Sana lagi tayong magkasama at maging masaya palagi",
-  "imagePath": "img/vector.jpg"
+  "valentineText": "It's Valentine's Day!!! 💕",
+  "chatboxText": "It's Valentine's day. How to tell her how special she is to me?",
+  "idea1Text": "That's what I was going to do.",
+  "idea2Text": "But then I stopped.",
+  "idea3Text": "I realised, I wanted to do something",
+  "idea3SpecialText": "special",
+  "idea4Text": "Because,",
+  "idea5Text": "You are Special",
+  "idea6Text": "SO",
+  "imagePath": "img/vector.jpg",
+  "wishTitle": "Happy Valentine's Day Mahal",
+  "wishText": "I hope we'll be together forever. I love you so much.",
+  "finalText1": "Tell me if you liked it.",
+  "finalText2": "Or click, if you want to watch it again."
 }
